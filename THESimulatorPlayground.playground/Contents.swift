@@ -28,7 +28,7 @@ func conversion(lowerBound: Double, upperBound: Double) -> Double {
 
 var agenda: [Event] = [Event(type: .arrival, time: 2.5)]
 var sizeOfQueue: Int = 0
-var states: [Double] = [0, 0, 0, 0, 0]
+var states: [Double] = Array(repeating: 0, count: 5)
 var time: Double = 0
 
 func accountForProbabilities() {
@@ -36,7 +36,9 @@ func accountForProbabilities() {
         .min(by: { $0.time < $1.time }) else {
                     return
     }
-    states[sizeOfQueue] = event.time
+    
+    states[sizeOfQueue] = event.time - time + states[sizeOfQueue]
+    
     time = event.time
 //    print("event: \(event.type)")
 //    print("state: \(states)")
@@ -83,8 +85,11 @@ for i in 0..<7 {
     }
 }
 
-print("states: \(states)")
-print("final time: \(time)")
-agenda.forEach { (event) in
-    print("\(event.type) \(event.time)")
+states.enumerated().forEach { (index, state) in
+    print("state \(index): \((states[index] / time) * 100 )")
 }
+print("total: \(time)")
+//print()
+//agenda.forEach { (event) in
+//    print("\(event.type) \(event.time)")
+//}
