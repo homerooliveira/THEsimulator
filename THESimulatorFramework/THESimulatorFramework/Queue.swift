@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Queue {
+public final class Queue {
     
     var agenda: [Event] = [Event(type: .arrival, time: 2.5)]
     public var sizeOfQueue: Int = 0
@@ -18,7 +18,7 @@ public class Queue {
     let numberOfServer: Int
     let randomStartegy: RandomStartegy
     
-    public init(numberOfStates: Int, numberOfServer: Int, randomStartegy: RandomStartegy) {
+    public init(numberOfStates: Int, numberOfServer: Int, randomStartegy: RandomStartegy = CocoaRandom()) {
         self.numberOfStates = numberOfStates
         self.numberOfServer = numberOfServer
         states = Array(repeating: 0, count: numberOfStates + 1)
@@ -57,8 +57,8 @@ public class Queue {
         }
     }
     
-    public func execute() -> [[String]] {
-        for _ in 0..<7 {
+    public func execute(iterations: Int) -> [[String]] {
+        for _ in 0..<iterations {
             agenda = agenda.filter({ $0.time > time })
             if let event = agenda.min(by: { $0.time < $1.time }) {
                 switch event.type {

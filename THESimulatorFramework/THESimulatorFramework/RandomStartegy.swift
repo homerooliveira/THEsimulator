@@ -8,8 +8,6 @@
 
 import Foundation
 
-var randomNumbers: [Double] = [0.1195, 0.3491, 0.9832, 0.7731, 0.8935, 0.2103, 0.0392, 0.1782]
-
 public protocol RandomStartegy {
     func random() -> Double
 }
@@ -20,7 +18,7 @@ public extension RandomStartegy {
     }
 }
 
-public class CustomRandom: RandomStartegy {
+public final class CustomRandom: RandomStartegy {
     let randomNumbers: [Double]
     var count = 0
     
@@ -37,6 +35,10 @@ public class CustomRandom: RandomStartegy {
 }
 
 public struct CocoaRandom: RandomStartegy {
+    public init (){
+        
+    }
+    
     public func random() -> Double {
         return Double(arc4random()) / Double(UInt32.max)
     }
