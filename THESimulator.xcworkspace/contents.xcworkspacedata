@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:THESimulatorPlayground.playground">
+      location = "group:THESimulatorFramework/THESimulatorFramework.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:THESimulator/THESimulator.xcodeproj">
    </FileRef>
 </Workspace>
