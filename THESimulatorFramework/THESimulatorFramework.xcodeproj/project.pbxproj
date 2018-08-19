@@ -56,6 +56,7 @@
 		8D0B58B92129202500D6BC02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D0B58BC2129202500D6BC02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D0B58BE2129202500D6BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D0B58C42129212300D6BC02 /* THESimulatorPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = THESimulatorPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 		8D0B58802129176200D6BC02 = {
 			isa = PBXGroup;
 			children = (
+				8D0B58C42129212300D6BC02 /* THESimulatorPlayground.playground */,
 				8D0B588C2129176200D6BC02 /* THESimulatorFramework */,
 				8D0B58972129176200D6BC02 /* THESimulatorFrameworkTests */,
 				8D0B58B12129202400D6BC02 /* Dummy */,
