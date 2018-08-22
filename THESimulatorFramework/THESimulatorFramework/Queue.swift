@@ -16,9 +16,9 @@ public final class Queue {
     public var time: Double = 0
     let numberOfStates: Int
     let numberOfServer: Int
-    let randomStartegy: RandomStartegy
+    let randomStartegy: RandomStrategy
     
-    public init(numberOfStates: Int, numberOfServer: Int, randomStartegy: RandomStartegy = CocoaRandom()) {
+    public init(numberOfStates: Int, numberOfServer: Int, randomStartegy: RandomStrategy = CocoaRandom()) {
         self.numberOfStates = numberOfStates
         self.numberOfServer = numberOfServer
         states = Array(repeating: 0, count: numberOfStates + 1)
@@ -26,9 +26,6 @@ public final class Queue {
     }
     
     func accountForProbabilities(event: Event) {
-        guard sizeOfQueue <= 4 else {
-            return
-        }
         states[sizeOfQueue] = event.time - time + states[sizeOfQueue]
         time = event.time
     }
@@ -57,6 +54,7 @@ public final class Queue {
         }
     }
     
+    @discardableResult
     public func execute(iterations: Int) -> [[String]] {
         for _ in 0..<iterations {
             agenda = agenda.filter({ $0.time > time })

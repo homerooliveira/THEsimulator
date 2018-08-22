@@ -8,21 +8,21 @@
 
 import Foundation
 
-public protocol RandomStartegy {
+public protocol RandomStrategy {
     func random() -> Double
 }
 
-public extension RandomStartegy {
+public extension RandomStrategy {
     func conversion(_ range: ClosedRange<Double>) -> Double {
         return (range.upperBound - range.lowerBound) * random() + range.lowerBound
     }
 }
 
-public final class CustomRandom: RandomStartegy {
+public final class CustomRandom: RandomStrategy {
     let randomNumbers: [Double]
     var count = 0
     
-    init(_ randomNumbers: [Double]) {
+    public init(_ randomNumbers: [Double]) {
         self.randomNumbers = randomNumbers
     }
     
@@ -34,7 +34,7 @@ public final class CustomRandom: RandomStartegy {
     }
 }
 
-public struct CocoaRandom: RandomStartegy {
+public struct CocoaRandom: RandomStrategy {
     public init (){
         
     }

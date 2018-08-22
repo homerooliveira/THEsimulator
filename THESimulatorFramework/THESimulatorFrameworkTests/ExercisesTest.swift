@@ -20,7 +20,7 @@ class ExercisesTest: XCTestCase {
         let randomNumbers: [Double] = [0.1195, 0.3491, 0.9832, 0.7731, 0.8935, 0.2103, 0.0392, 0.1782]
         let random = CustomRandom(randomNumbers)
         let queue = Queue(numberOfStates: 4, numberOfServer: 1, randomStartegy: random)
-        _ = queue.execute(iterations: randomNumbers.count - 1)
+        queue.execute(iterations: randomNumbers.count - 1)
         
         let expectedStates = [2.5, 4.8830, 5.3820, 0.0, 0.0]
         XCTAssertEqual(expectedStates.count, queue.states.count)

@@ -12,7 +12,7 @@
 		8D0B589B2129176200D6BC02 /* THESimulatorFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D0B588D2129176200D6BC02 /* THESimulatorFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D0B58A52129179700D6BC02 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58A42129179700D6BC02 /* Event.swift */; };
 		8D0B58A7212917C100D6BC02 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58A6212917C100D6BC02 /* Queue.swift */; };
-		8D0B58A92129182A00D6BC02 /* RandomStartegy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58A82129182A00D6BC02 /* RandomStartegy.swift */; };
+		8D0B58A92129182A00D6BC02 /* RandomStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58A82129182A00D6BC02 /* RandomStrategy.swift */; };
 		8D0B58AB21291D0A00D6BC02 /* ExercisesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58AA21291D0A00D6BC02 /* ExercisesTest.swift */; };
 		8D0B58B32129202400D6BC02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58B22129202400D6BC02 /* AppDelegate.swift */; };
 		8D0B58B52129202400D6BC02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58B42129202400D6BC02 /* ViewController.swift */; };
@@ -47,7 +47,7 @@
 		8D0B589A2129176200D6BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0B58A42129179700D6BC02 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8D0B58A6212917C100D6BC02 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		8D0B58A82129182A00D6BC02 /* RandomStartegy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomStartegy.swift; sourceTree = "<group>"; };
+		8D0B58A82129182A00D6BC02 /* RandomStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomStrategy.swift; sourceTree = "<group>"; };
 		8D0B58AA21291D0A00D6BC02 /* ExercisesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTest.swift; sourceTree = "<group>"; };
 		8D0B58B02129202300D6BC02 /* Dummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0B58B22129202400D6BC02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				8D0B588E2129176200D6BC02 /* Info.plist */,
 				8D0B58A42129179700D6BC02 /* Event.swift */,
 				8D0B58A6212917C100D6BC02 /* Queue.swift */,
-				8D0B58A82129182A00D6BC02 /* RandomStartegy.swift */,
+				8D0B58A82129182A00D6BC02 /* RandomStrategy.swift */,
 			);
 			path = THESimulatorFramework;
 			sourceTree = "<group>";
@@ -286,7 +286,7 @@
 			files = (
 				8D0B58A52129179700D6BC02 /* Event.swift in Sources */,
 				8D0B58A7212917C100D6BC02 /* Queue.swift in Sources */,
-				8D0B58A92129182A00D6BC02 /* RandomStartegy.swift in Sources */,
+				8D0B58A92129182A00D6BC02 /* RandomStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
