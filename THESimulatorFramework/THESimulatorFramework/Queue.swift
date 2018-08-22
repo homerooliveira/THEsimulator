@@ -14,6 +14,7 @@ public final class Queue {
     public var sizeOfQueue: Int = 0
     public var states: [Double]
     public var time: Double = 0
+    public var lostEvents: Int = 0
     let numberOfStates: Int
     let numberOfServer: Int
     let randomStartegy: RandomStrategy
@@ -30,7 +31,6 @@ public final class Queue {
         time = event.time
     }
     
-    
     func schedule(for type: EventType, time: Double) {
         agenda.append(Event(type: type, time: time))
     }
@@ -42,6 +42,8 @@ public final class Queue {
             if sizeOfQueue <= numberOfServer {
                 schedule(for: .exit, time: time + randomStartegy.conversion(3...5))
             }
+        } else {
+            lostEvents += 1
         }
         schedule(for: .arrival, time: time + randomStartegy.conversion(2...3))
     }
@@ -68,7 +70,6 @@ public final class Queue {
             }
         }
         
-        
         var statesAsString = states.enumerated().map { (index, state) in
             "state \(index)| \(state) | \((state / time) * 100 )%"
         }
@@ -78,6 +79,7 @@ public final class Queue {
             "\(index) - \(event.type) \(event.time)"
         }
         
-        return [statesAsString, agendaAsString]
+        let lostEventsString = "lostEvents - \(lostEvents)"
+        return [statesAsString, agendaAsString, [lostEventsString]]
     }
 }

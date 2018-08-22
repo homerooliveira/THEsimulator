@@ -19,6 +19,8 @@
 		8D0B58B82129202400D6BC02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B58B62129202400D6BC02 /* Main.storyboard */; };
 		8D0B58BA2129202500D6BC02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B58B92129202500D6BC02 /* Assets.xcassets */; };
 		8D0B58BD2129202500D6BC02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B58BB2129202500D6BC02 /* LaunchScreen.storyboard */; };
+		8D73C461212D172F009DB8A1 /* ScatterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C460212D172F009DB8A1 /* ScatterView.swift */; };
+		8DDB1616212CEE980016111B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DDB1615212CEE980016111B /* Charts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +43,6 @@
 /* Begin PBXFileReference section */
 		8D0B588A2129176200D6BC02 /* THESimulatorFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = THESimulatorFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0B588D2129176200D6BC02 /* THESimulatorFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THESimulatorFramework.h; sourceTree = "<group>"; };
-		8D0B588E2129176200D6BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0B58932129176200D6BC02 /* THESimulatorFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THESimulatorFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0B58982129176200D6BC02 /* THESimulatorFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THESimulatorFrameworkTests.swift; sourceTree = "<group>"; };
 		8D0B589A2129176200D6BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +58,10 @@
 		8D0B58BC2129202500D6BC02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D0B58BE2129202500D6BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0B58C42129212300D6BC02 /* THESimulatorPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = THESimulatorPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8D52485B212D1B740085F81C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D73C460212D172F009DB8A1 /* ScatterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterView.swift; sourceTree = "<group>"; };
+		8DDB1613212CEC7D0016111B /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = ../THESimulator/Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		8DDB1615212CEE980016111B /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DDB1616212CEE980016111B /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +99,7 @@
 				8D0B58972129176200D6BC02 /* THESimulatorFrameworkTests */,
 				8D0B58B12129202400D6BC02 /* Dummy */,
 				8D0B588B2129176200D6BC02 /* Products */,
+				8DDB1612212CEC7D0016111B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,11 +116,12 @@
 		8D0B588C2129176200D6BC02 /* THESimulatorFramework */ = {
 			isa = PBXGroup;
 			children = (
+				8D52485B212D1B740085F81C /* Info.plist */,
 				8D0B588D2129176200D6BC02 /* THESimulatorFramework.h */,
-				8D0B588E2129176200D6BC02 /* Info.plist */,
 				8D0B58A42129179700D6BC02 /* Event.swift */,
 				8D0B58A6212917C100D6BC02 /* Queue.swift */,
 				8D0B58A82129182A00D6BC02 /* RandomStrategy.swift */,
+				8D73C460212D172F009DB8A1 /* ScatterView.swift */,
 			);
 			path = THESimulatorFramework;
 			sourceTree = "<group>";
@@ -141,6 +149,15 @@
 			path = Dummy;
 			sourceTree = "<group>";
 		};
+		8DDB1612212CEC7D0016111B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DDB1615212CEE980016111B /* Charts.framework */,
+				8DDB1613212CEC7D0016111B /* Charts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -163,6 +180,7 @@
 				8D0B58862129176200D6BC02 /* Frameworks */,
 				8D0B58872129176200D6BC02 /* Headers */,
 				8D0B58882129176200D6BC02 /* Resources */,
+				8DDB1611212CEAD20016111B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -279,12 +297,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8DDB1611212CEAD20016111B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D0B58852129176200D6BC02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8D0B58A52129179700D6BC02 /* Event.swift in Sources */,
+				8D73C461212D172F009DB8A1 /* ScatterView.swift in Sources */,
 				8D0B58A7212917C100D6BC02 /* Queue.swift in Sources */,
 				8D0B58A92129182A00D6BC02 /* RandomStrategy.swift in Sources */,
 			);
@@ -474,6 +510,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = THESimulatorFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,6 +541,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = THESimulatorFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
