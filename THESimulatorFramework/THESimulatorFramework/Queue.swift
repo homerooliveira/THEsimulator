@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class Queue {
+public final class EventScheduler {
     
     var agenda: [Event] = [Event(type: .arrival, time: 2.5)]
     public var sizeOfQueue: Int = 0
@@ -32,6 +32,9 @@ public final class Queue {
     }
     
     func schedule(for type: EventType, time: Double) {
+        if time <= self.time {
+            print("time = \(time)")
+        }
         agenda.append(Event(type: type, time: time))
     }
     

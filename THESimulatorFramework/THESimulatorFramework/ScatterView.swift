@@ -29,7 +29,8 @@ public extension ScatterChartView {
         
         let set = ScatterChartDataSet(values: values)
         set.setColor(ChartColorTemplates.colorful()[0])
-        set.scatterShapeSize = 6
+        set.setScatterShape(.cross)
+        set.scatterShapeSize = 5
         
         data = ScatterChartData(dataSets: [set])
     }

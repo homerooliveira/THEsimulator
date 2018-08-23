@@ -11,7 +11,7 @@
 		8D0B58992129176200D6BC02 /* THESimulatorFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58982129176200D6BC02 /* THESimulatorFrameworkTests.swift */; };
 		8D0B589B2129176200D6BC02 /* THESimulatorFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D0B588D2129176200D6BC02 /* THESimulatorFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D0B58A52129179700D6BC02 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58A42129179700D6BC02 /* Event.swift */; };
-		8D0B58A7212917C100D6BC02 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58A6212917C100D6BC02 /* Queue.swift */; };
+		8D0B58A7212917C100D6BC02 /* EventScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58A6212917C100D6BC02 /* EventScheduler.swift */; };
 		8D0B58A92129182A00D6BC02 /* RandomStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58A82129182A00D6BC02 /* RandomStrategy.swift */; };
 		8D0B58AB21291D0A00D6BC02 /* ExercisesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58AA21291D0A00D6BC02 /* ExercisesTest.swift */; };
 		8D0B58B32129202400D6BC02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58B22129202400D6BC02 /* AppDelegate.swift */; };
@@ -19,6 +19,7 @@
 		8D0B58B82129202400D6BC02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B58B62129202400D6BC02 /* Main.storyboard */; };
 		8D0B58BA2129202500D6BC02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B58B92129202500D6BC02 /* Assets.xcassets */; };
 		8D0B58BD2129202500D6BC02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B58BB2129202500D6BC02 /* LaunchScreen.storyboard */; };
+		8D52485D212DC8A70085F81C /* Queu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52485C212DC8A70085F81C /* Queu.swift */; };
 		8D73C461212D172F009DB8A1 /* ScatterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C460212D172F009DB8A1 /* ScatterView.swift */; };
 		8DDB1616212CEE980016111B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DDB1615212CEE980016111B /* Charts.framework */; };
 /* End PBXBuildFile section */
@@ -47,7 +48,7 @@
 		8D0B58982129176200D6BC02 /* THESimulatorFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THESimulatorFrameworkTests.swift; sourceTree = "<group>"; };
 		8D0B589A2129176200D6BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0B58A42129179700D6BC02 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		8D0B58A6212917C100D6BC02 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		8D0B58A6212917C100D6BC02 /* EventScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduler.swift; sourceTree = "<group>"; };
 		8D0B58A82129182A00D6BC02 /* RandomStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomStrategy.swift; sourceTree = "<group>"; };
 		8D0B58AA21291D0A00D6BC02 /* ExercisesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTest.swift; sourceTree = "<group>"; };
 		8D0B58B02129202300D6BC02 /* Dummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +60,7 @@
 		8D0B58BE2129202500D6BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0B58C42129212300D6BC02 /* THESimulatorPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = THESimulatorPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8D52485B212D1B740085F81C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D52485C212DC8A70085F81C /* Queu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queu.swift; sourceTree = "<group>"; };
 		8D73C460212D172F009DB8A1 /* ScatterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterView.swift; sourceTree = "<group>"; };
 		8DDB1613212CEC7D0016111B /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = ../THESimulator/Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		8DDB1615212CEE980016111B /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
@@ -119,9 +121,10 @@
 				8D52485B212D1B740085F81C /* Info.plist */,
 				8D0B588D2129176200D6BC02 /* THESimulatorFramework.h */,
 				8D0B58A42129179700D6BC02 /* Event.swift */,
-				8D0B58A6212917C100D6BC02 /* Queue.swift */,
+				8D0B58A6212917C100D6BC02 /* EventScheduler.swift */,
 				8D0B58A82129182A00D6BC02 /* RandomStrategy.swift */,
 				8D73C460212D172F009DB8A1 /* ScatterView.swift */,
+				8D52485C212DC8A70085F81C /* Queu.swift */,
 			);
 			path = THESimulatorFramework;
 			sourceTree = "<group>";
@@ -321,7 +324,8 @@
 			files = (
 				8D0B58A52129179700D6BC02 /* Event.swift in Sources */,
 				8D73C461212D172F009DB8A1 /* ScatterView.swift in Sources */,
-				8D0B58A7212917C100D6BC02 /* Queue.swift in Sources */,
+				8D52485D212DC8A70085F81C /* Queu.swift in Sources */,
+				8D0B58A7212917C100D6BC02 /* EventScheduler.swift in Sources */,
 				8D0B58A92129182A00D6BC02 /* RandomStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

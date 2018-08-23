@@ -5,7 +5,6 @@ import PlaygroundSupport
 import THESimulatorFramework
 import Charts
 
-
 let chartView = ScatterChartView.makeDefault(frame: CGRect(origin: .zero, size: CGSize(width: 400, height: 400)))
 
 let random: RandomStrategy = CocoaRandom()

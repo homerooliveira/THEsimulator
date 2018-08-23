@@ -1,8 +1,9 @@
 import Foundation
 import THESimulatorFramework
 
-var queue = Queue(numberOfStates: 4, numberOfServer: 1)
-let executions = queue.execute(iterations: 1_000_000)
+let queue = Queue(numberOfServer: 1, numberOfStates: 4, arrivalRange: 2...3, exitRange: 3...5)
+let scheduler = EventScheduler(queue: queue)
+let executions = scheduler.execute(iterations: 1_000_000)
 executions[0].forEach { print($0) }
 executions[1].forEach { print($0) }
 executions[2].forEach { print($0) }
