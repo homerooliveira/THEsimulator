@@ -7,7 +7,7 @@ import Charts
 
 let chartView = ScatterChartView.makeDefault(frame: CGRect(origin: .zero, size: CGSize(width: 400, height: 400)))
 
-let random: RandomStrategy = CocoaRandom()
+let random: RandomStrategy = LinearCongruentialGenerator()
 chartView.setRandomStrategy(random, iterations: 1_000)
 
 PlaygroundPage.current.liveView = chartView

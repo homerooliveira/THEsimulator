@@ -36,10 +36,25 @@ public final class CustomRandom: RandomStrategy {
 
 public struct CocoaRandom: RandomStrategy {
     public init (){
-        
     }
     
     public func random() -> Double {
         return Double(arc4random()) / Double(UInt32.max)
+    }
+}
+
+public class LinearCongruentialGenerator: RandomStrategy {
+    var previous: Double
+    
+    public init(seed: UInt64 = DispatchTime.now().uptimeNanoseconds){
+        previous = Double(seed)
+    }
+    
+    public func random() -> Double {
+        let a: Double = 27644437 // 3thr Bell prime
+        let c: Double = 11
+        let randomNumber = (previous * a + c).truncatingRemainder(dividingBy: Double(UInt64.max))
+        previous = randomNumber
+        return randomNumber / Double(UInt64.max)
     }
 }
