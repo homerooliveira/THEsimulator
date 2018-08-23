@@ -123,8 +123,8 @@
 				8D0B58A42129179700D6BC02 /* Event.swift */,
 				8D0B58A6212917C100D6BC02 /* EventScheduler.swift */,
 				8D0B58A82129182A00D6BC02 /* RandomStrategy.swift */,
-				8D73C460212D172F009DB8A1 /* ScatterView.swift */,
 				8D52485C212DC8A70085F81C /* Queu.swift */,
+				8D73C460212D172F009DB8A1 /* ScatterView.swift */,
 			);
 			path = THESimulatorFramework;
 			sourceTree = "<group>";

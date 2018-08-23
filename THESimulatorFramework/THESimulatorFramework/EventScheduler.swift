@@ -9,14 +9,15 @@
 import Foundation
 
 public final class EventScheduler {
-    var agenda: [Event] = [Event(type: .arrival, time: 2.5)]
+    var agenda: [Event] = []
     public var lostEvents: Int = 0
     public var time: Double = 0
     public var queue: Queue
     public let randomStartegy: RandomStrategy
     
-    public init(queue: Queue, randomStartegy: RandomStrategy = CocoaRandom()) {
+    public init(queue: Queue, initialArrivalTime: Double, randomStartegy: RandomStrategy = CocoaRandom()) {
         self.queue = queue
+        self.agenda = [Event(type: .arrival, time: initialArrivalTime)]
         self.randomStartegy = randomStartegy
     }
     
