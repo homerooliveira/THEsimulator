@@ -51,9 +51,10 @@ public class LinearCongruentialGenerator: RandomStrategy {
     }
     
     public func random() -> Double {
-        let a: Double = 27644437 // 3thr Bell prime
+        let a: Double = 27644437
         let c: Double = 11
-        let randomNumber = (previous * a + c).truncatingRemainder(dividingBy: Double(UInt64.max))
+        let m: Double = Double(UInt64.max)
+        let randomNumber = (previous * a + c).truncatingRemainder(dividingBy: m)
         previous = randomNumber
         return randomNumber / Double(UInt64.max)
     }

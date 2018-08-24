@@ -15,7 +15,6 @@ public extension ScatterChartView {
         chartView.backgroundColor = .white
         chartView.pinchZoomEnabled = true
         chartView.xAxis.labelPosition = .bottom
-        chartView.rightAxis.enabled = false
         chartView.legend.enabled = false
         chartView.chartDescription?.enabled = false
         chartView.dragEnabled = true

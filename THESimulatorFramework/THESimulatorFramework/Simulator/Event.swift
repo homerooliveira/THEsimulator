@@ -13,7 +13,12 @@ public enum EventType {
     case exit
 }
 
-public struct Event {
+public struct Event: Comparable {
     let type: EventType
     let time: Double
 }
+
+public func < (lhs: Event, rhs: Event) -> Bool {
+    return lhs.time < rhs.time
+}
+

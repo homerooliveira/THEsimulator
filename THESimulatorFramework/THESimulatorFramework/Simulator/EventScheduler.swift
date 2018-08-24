@@ -15,7 +15,7 @@ public final class EventScheduler {
     public var queue: Queue
     public let randomStartegy: RandomStrategy
     
-    public init(queue: Queue, initialArrivalTime: Double, randomStartegy: RandomStrategy = CocoaRandom()) {
+    public init(queue: Queue, initialArrivalTime: Double, randomStartegy: RandomStrategy = LinearCongruentialGenerator()) {
         self.queue = queue
         self.agenda = [Event(type: .arrival, time: initialArrivalTime)]
         self.randomStartegy = randomStartegy
@@ -27,10 +27,9 @@ public final class EventScheduler {
     }
     
     func schedule(for type: EventType, time: Double) {
-        if time <= self.time {
-            print("time = \(time)")
-        }
-        agenda.append(Event(type: type, time: time))
+        let event = Event(type: type, time: time)
+        precondition(event.time > self.time, "event.time = \(event.time) - globalTime = \(self.time)")
+        agenda.insertOrdered(elem: event)
     }
     
     func executeArrival(event: Event) {
@@ -38,33 +37,31 @@ public final class EventScheduler {
         if queue.size < queue.numberOfStates {
             queue.size += 1
             if queue.size <= queue.numberOfServer {
-                schedule(for: .exit, time: time + randomStartegy.conversion(3...5))
+                schedule(for: .exit, time: time + randomStartegy.conversion(queue.exitRange))
             }
         } else {
             lostEvents += 1
         }
-        schedule(for: .arrival, time: time + randomStartegy.conversion(2...3))
+        schedule(for: .arrival, time: time + randomStartegy.conversion(queue.arrivalRange))
     }
     
     func executeExit(event: Event) {
         accountForProbabilities(event: event)
         queue.size -= 1
         if queue.size >= queue.numberOfServer {
-            schedule(for: .exit, time: time + randomStartegy.conversion(3...5))
+            schedule(for: .exit, time: time + randomStartegy.conversion(queue.exitRange))
         }
     }
     
     @discardableResult
     public func execute(iterations: Int) -> [[String]] {
         for _ in 0..<iterations {
-            agenda = agenda.filter({ $0.time > time })
-            if let event = agenda.min(by: { $0.time < $1.time }) {
-                switch event.type {
-                case .arrival:
-                    executeArrival(event: event)
-                case .exit:
-                    executeExit(event: event)
-                }
+            let event = agenda.remove(at: 0)
+            switch event.type {
+            case .arrival:
+                executeArrival(event: event)
+            case .exit:
+                executeExit(event: event)
             }
         }
         
