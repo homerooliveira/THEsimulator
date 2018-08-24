@@ -9,7 +9,9 @@
 import Foundation
 
 public final class EventScheduler {
-    var agenda: [Event] = []
+    public var agenda: [Event] = []
+    public var history: [Event] = []
+    public var executeEvents: ContiguousArray<Event> = []
     public var lostEvents: Int = 0
     public var time: Double = 0
     public var queue: Queue
@@ -18,6 +20,7 @@ public final class EventScheduler {
     public init(queue: Queue, initialArrivalTime: Double, randomStartegy: RandomStrategy = LinearCongruentialGenerator()) {
         self.queue = queue
         self.agenda = [Event(type: .arrival, time: initialArrivalTime)]
+        self.history = [Event(type: .arrival, time: initialArrivalTime)]
         self.randomStartegy = randomStartegy
     }
     
@@ -30,6 +33,7 @@ public final class EventScheduler {
         let event = Event(type: type, time: time)
         precondition(event.time > self.time, "event.time = \(event.time) - globalTime = \(self.time)")
         agenda.insertOrdered(elem: event)
+        history.append(event)
     }
     
     func executeArrival(event: Event) {
@@ -57,6 +61,7 @@ public final class EventScheduler {
     public func execute(iterations: Int) -> [[String]] {
         for _ in 0..<iterations {
             let event = agenda.remove(at: 0)
+            executeEvents.append(event)
             switch event.type {
             case .arrival:
                 executeArrival(event: event)

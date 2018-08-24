@@ -30,6 +30,9 @@ public final class CustomRandom: RandomStrategy {
         defer {
             count += 1
         }
+        if count >= randomNumbers.count {
+          return 0
+        }
         return randomNumbers[count]
     }
 }
@@ -44,16 +47,16 @@ public struct CocoaRandom: RandomStrategy {
 }
 
 public class LinearCongruentialGenerator: RandomStrategy {
-    var previous: Double
+    public var previous: Double
+    public let a: Double = 27644437
+    public let c: Double = 11
+    public let m: Double = Double(UInt64.max)
     
     public init(seed: UInt64 = DispatchTime.now().uptimeNanoseconds){
         previous = Double(seed)
     }
     
     public func random() -> Double {
-        let a: Double = 27644437
-        let c: Double = 11
-        let m: Double = Double(UInt64.max)
         let randomNumber = (previous * a + c).truncatingRemainder(dividingBy: m)
         previous = randomNumber
         return randomNumber / Double(UInt64.max)
