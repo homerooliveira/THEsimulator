@@ -1,18 +1,20 @@
-//: [Previous](@previous)
+//
+//  ChartViewController.swift
+//  THESimulatorFramework
+//
+//  Created by Homero Oliveira on 24/08/18.
+//  Copyright © 2018 Homero Oliveira. All rights reserved.
+//
 
-import Foundation
-import PlaygroundSupport
-import THESimulatorFramework
+import UIKit
 import Charts
 
-let chartView = ScatterChartView.makeDefault(frame: CGRect(origin: .zero, size: CGSize(width: 400, height: 400)))
-
-class ChartViewController: UIViewController {
+public class ChartViewController: UIViewController {
     
     let cellIdentifier = "dataCell"
     var infos: [String] = []
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
@@ -58,19 +60,14 @@ class ChartViewController: UIViewController {
 
 extension ChartViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return infos.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.textLabel?.text = infos[indexPath.row]
         
         return cell
     }
 }
-
-let viewController = ChartViewController()
-PlaygroundPage.current.liveView = viewController
-
-//: [Next](@next)
