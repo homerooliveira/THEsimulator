@@ -11,8 +11,7 @@
 		8D0B58632129160200D6BC02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58622129160200D6BC02 /* ViewController.swift */; };
 		8D0B58682129160400D6BC02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B58672129160400D6BC02 /* Assets.xcassets */; };
 		8D0B586B2129160400D6BC02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B58692129160400D6BC02 /* LaunchScreen.storyboard */; };
-		8D0B58762129160400D6BC02 /* THESimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B58752129160400D6BC02 /* THESimulatorTests.swift */; };
-		8D52B63E213087AC003BFE1A /* THESimulatorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D52B635213087AB003BFE1A /* THESimulatorFramework.framework */; };
+		8D0C66592139F391009C1DFF /* ExercisesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC1A304213093D000C9F797 /* ExercisesTest.swift */; };
 		8D52B647213087AC003BFE1A /* THESimulatorFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D52B637213087AB003BFE1A /* THESimulatorFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D52B64A213087AC003BFE1A /* THESimulatorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D52B635213087AB003BFE1A /* THESimulatorFramework.framework */; };
 		8D52B64B213087AC003BFE1A /* THESimulatorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D52B635213087AB003BFE1A /* THESimulatorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -30,25 +29,10 @@
 		8D83B1F7213265AD00CA98AA /* CustomRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83B1F6213265AD00CA98AA /* CustomRandom.swift */; };
 		8D83B1F9213265C100CA98AA /* CocoaRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83B1F8213265C100CA98AA /* CocoaRandom.swift */; };
 		8D83B1FB213265D900CA98AA /* LinearCongruentialGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83B1FA213265D900CA98AA /* LinearCongruentialGenerator.swift */; };
-		8DC1A305213093D000C9F797 /* ExercisesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC1A304213093D000C9F797 /* ExercisesTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8D0B58722129160400D6BC02 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8D0B58552129160200D6BC02 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D0B585C2129160200D6BC02;
-			remoteInfo = THESimulator;
-		};
-		8D52B63F213087AC003BFE1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8D0B58552129160200D6BC02 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D52B634213087AB003BFE1A;
-			remoteInfo = THESimulatorFramework;
-		};
-		8D52B641213087AC003BFE1A /* PBXContainerItemProxy */ = {
+		8D0C66542139F367009C1DFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8D0B58552129160200D6BC02 /* Project object */;
 			proxyType = 1;
@@ -86,14 +70,11 @@
 		8D0B58672129160400D6BC02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D0B586A2129160400D6BC02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D0B586C2129160400D6BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D0B58712129160400D6BC02 /* THESimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THESimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D0B58752129160400D6BC02 /* THESimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THESimulatorTests.swift; sourceTree = "<group>"; };
-		8D0B58772129160400D6BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D0C664F2139F367009C1DFF /* THESimulatorFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THESimulatorFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0C66532139F367009C1DFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D52B635213087AB003BFE1A /* THESimulatorFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = THESimulatorFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D52B637213087AB003BFE1A /* THESimulatorFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THESimulatorFramework.h; sourceTree = "<group>"; };
 		8D52B638213087AB003BFE1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D52B63D213087AB003BFE1A /* THESimulatorFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THESimulatorFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D52B646213087AC003BFE1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D52B659213087E6003BFE1A /* EventScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduler.swift; sourceTree = "<group>"; };
 		8D52B65A213087E6003BFE1A /* Queu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queu.swift; sourceTree = "<group>"; };
 		8D52B65B213087E6003BFE1A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -120,7 +101,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D0B586E2129160400D6BC02 /* Frameworks */ = {
+		8D0C664C2139F367009C1DFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -132,14 +113,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D52B673213089FD003BFE1A /* Charts.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8D52B63A213087AB003BFE1A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D52B63E213087AC003BFE1A /* THESimulatorFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,9 +132,8 @@
 			children = (
 				8D52B6692130880D003BFE1A /* THESimulatorPlayground.playground */,
 				8D0B585F2129160200D6BC02 /* THESimulator */,
-				8D0B58742129160400D6BC02 /* THESimulatorTests */,
 				8D52B636213087AB003BFE1A /* THESimulatorFramework */,
-				8D52B643213087AC003BFE1A /* THESimulatorFrameworkTests */,
+				8D0C66502139F367009C1DFF /* THESimulatorFrameworkTests */,
 				8D0B585E2129160200D6BC02 /* Products */,
 				267B9B2526A21FB415BCC71C /* Frameworks */,
 			);
@@ -171,9 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				8D0B585D2129160200D6BC02 /* THESimulator.app */,
-				8D0B58712129160400D6BC02 /* THESimulatorTests.xctest */,
 				8D52B635213087AB003BFE1A /* THESimulatorFramework.framework */,
-				8D52B63D213087AB003BFE1A /* THESimulatorFrameworkTests.xctest */,
+				8D0C664F2139F367009C1DFF /* THESimulatorFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,13 +161,13 @@
 			path = THESimulator;
 			sourceTree = "<group>";
 		};
-		8D0B58742129160400D6BC02 /* THESimulatorTests */ = {
+		8D0C66502139F367009C1DFF /* THESimulatorFrameworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				8D0B58752129160400D6BC02 /* THESimulatorTests.swift */,
-				8D0B58772129160400D6BC02 /* Info.plist */,
+				8DC1A304213093D000C9F797 /* ExercisesTest.swift */,
+				8D0C66532139F367009C1DFF /* Info.plist */,
 			);
-			path = THESimulatorTests;
+			path = THESimulatorFrameworkTests;
 			sourceTree = "<group>";
 		};
 		8D52B636213087AB003BFE1A /* THESimulatorFramework */ = {
@@ -210,15 +181,6 @@
 				8D52B638213087AB003BFE1A /* Info.plist */,
 			);
 			path = THESimulatorFramework;
-			sourceTree = "<group>";
-		};
-		8D52B643213087AC003BFE1A /* THESimulatorFrameworkTests */ = {
-			isa = PBXGroup;
-			children = (
-				8D52B646213087AC003BFE1A /* Info.plist */,
-				8DC1A304213093D000C9F797 /* ExercisesTest.swift */,
-			);
-			path = THESimulatorFrameworkTests;
 			sourceTree = "<group>";
 		};
 		8D52B66A21308824003BFE1A /* Simulator */ = {
@@ -294,23 +256,22 @@
 			productReference = 8D0B585D2129160200D6BC02 /* THESimulator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8D0B58702129160400D6BC02 /* THESimulatorTests */ = {
+		8D0C664E2139F367009C1DFF /* THESimulatorFrameworkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D0B587D2129160400D6BC02 /* Build configuration list for PBXNativeTarget "THESimulatorTests" */;
+			buildConfigurationList = 8D0C66562139F367009C1DFF /* Build configuration list for PBXNativeTarget "THESimulatorFrameworkTests" */;
 			buildPhases = (
-				8B0736CB126792A2AC0322B4 /* [CP] Check Pods Manifest.lock */,
-				8D0B586D2129160400D6BC02 /* Sources */,
-				8D0B586E2129160400D6BC02 /* Frameworks */,
-				8D0B586F2129160400D6BC02 /* Resources */,
+				8D0C664B2139F367009C1DFF /* Sources */,
+				8D0C664C2139F367009C1DFF /* Frameworks */,
+				8D0C664D2139F367009C1DFF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8D0B58732129160400D6BC02 /* PBXTargetDependency */,
+				8D0C66552139F367009C1DFF /* PBXTargetDependency */,
 			);
-			name = THESimulatorTests;
-			productName = THESimulatorTests;
-			productReference = 8D0B58712129160400D6BC02 /* THESimulatorTests.xctest */;
+			name = THESimulatorFrameworkTests;
+			productName = THESimulatorFrameworkTests;
+			productReference = 8D0C664F2139F367009C1DFF /* THESimulatorFrameworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8D52B634213087AB003BFE1A /* THESimulatorFramework */ = {
@@ -332,25 +293,6 @@
 			productReference = 8D52B635213087AB003BFE1A /* THESimulatorFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8D52B63C213087AB003BFE1A /* THESimulatorFrameworkTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8D52B652213087AC003BFE1A /* Build configuration list for PBXNativeTarget "THESimulatorFrameworkTests" */;
-			buildPhases = (
-				8D52B639213087AB003BFE1A /* Sources */,
-				8D52B63A213087AB003BFE1A /* Frameworks */,
-				8D52B63B213087AB003BFE1A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8D52B640213087AC003BFE1A /* PBXTargetDependency */,
-				8D52B642213087AC003BFE1A /* PBXTargetDependency */,
-			);
-			name = THESimulatorFrameworkTests;
-			productName = THESimulatorFrameworkTests;
-			productReference = 8D52B63D213087AB003BFE1A /* THESimulatorFrameworkTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -364,16 +306,12 @@
 					8D0B585C2129160200D6BC02 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					8D0B58702129160400D6BC02 = {
+					8D0C664E2139F367009C1DFF = {
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = 8D0B585C2129160200D6BC02;
 					};
 					8D52B634213087AB003BFE1A = {
 						CreatedOnToolsVersion = 9.4.1;
-					};
-					8D52B63C213087AB003BFE1A = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 8D0B585C2129160200D6BC02;
 					};
 				};
 			};
@@ -391,9 +329,8 @@
 			projectRoot = "";
 			targets = (
 				8D0B585C2129160200D6BC02 /* THESimulator */,
-				8D0B58702129160400D6BC02 /* THESimulatorTests */,
 				8D52B634213087AB003BFE1A /* THESimulatorFramework */,
-				8D52B63C213087AB003BFE1A /* THESimulatorFrameworkTests */,
+				8D0C664E2139F367009C1DFF /* THESimulatorFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -408,7 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D0B586F2129160400D6BC02 /* Resources */ = {
+		8D0C664D2139F367009C1DFF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -422,34 +359,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D52B63B213087AB003BFE1A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8B0736CB126792A2AC0322B4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-THESimulatorTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8D52B671213088BC003BFE1A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -477,11 +389,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D0B586D2129160400D6BC02 /* Sources */ = {
+		8D0C664B2139F367009C1DFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D0B58762129160400D6BC02 /* THESimulatorTests.swift in Sources */,
+				8D0C66592139F391009C1DFF /* ExercisesTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,31 +416,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D52B639213087AB003BFE1A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8DC1A305213093D000C9F797 /* ExercisesTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8D0B58732129160400D6BC02 /* PBXTargetDependency */ = {
+		8D0C66552139F367009C1DFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8D0B585C2129160200D6BC02 /* THESimulator */;
-			targetProxy = 8D0B58722129160400D6BC02 /* PBXContainerItemProxy */;
-		};
-		8D52B640213087AC003BFE1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D52B634213087AB003BFE1A /* THESimulatorFramework */;
-			targetProxy = 8D52B63F213087AC003BFE1A /* PBXContainerItemProxy */;
-		};
-		8D52B642213087AC003BFE1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D0B585C2129160200D6BC02 /* THESimulator */;
-			targetProxy = 8D52B641213087AC003BFE1A /* PBXContainerItemProxy */;
+			targetProxy = 8D0C66542139F367009C1DFF /* PBXContainerItemProxy */;
 		};
 		8D52B649213087AC003BFE1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -709,20 +603,19 @@
 			};
 			name = Release;
 		};
-		8D0B587E2129160400D6BC02 /* Debug */ = {
+		8D0C66572139F367009C1DFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UW4NKHZQ4;
-				INFOPLIST_FILE = THESimulatorTests/Info.plist;
+				INFOPLIST_FILE = THESimulatorFrameworkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pucrs.simu.THESimulatorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pucrs.simu.THESimulatorFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -730,20 +623,19 @@
 			};
 			name = Debug;
 		};
-		8D0B587F2129160400D6BC02 /* Release */ = {
+		8D0C66582139F367009C1DFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UW4NKHZQ4;
-				INFOPLIST_FILE = THESimulatorTests/Info.plist;
+				INFOPLIST_FILE = THESimulatorFrameworkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pucrs.simu.THESimulatorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pucrs.simu.THESimulatorFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -815,46 +707,6 @@
 			};
 			name = Release;
 		};
-		8D52B64E213087AC003BFE1A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UW4NKHZQ4;
-				INFOPLIST_FILE = THESimulatorFrameworkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pucrs.simu.THESimulatorFrameworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/THESimulator.app/THESimulator";
-			};
-			name = Debug;
-		};
-		8D52B64F213087AC003BFE1A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UW4NKHZQ4;
-				INFOPLIST_FILE = THESimulatorFrameworkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pucrs.simu.THESimulatorFrameworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/THESimulator.app/THESimulator";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -876,11 +728,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D0B587D2129160400D6BC02 /* Build configuration list for PBXNativeTarget "THESimulatorTests" */ = {
+		8D0C66562139F367009C1DFF /* Build configuration list for PBXNativeTarget "THESimulatorFrameworkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8D0B587E2129160400D6BC02 /* Debug */,
-				8D0B587F2129160400D6BC02 /* Release */,
+				8D0C66572139F367009C1DFF /* Debug */,
+				8D0C66582139F367009C1DFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -890,15 +742,6 @@
 			buildConfigurations = (
 				8D52B64C213087AC003BFE1A /* Debug */,
 				8D52B64D213087AC003BFE1A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8D52B652213087AC003BFE1A /* Build configuration list for PBXNativeTarget "THESimulatorFrameworkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8D52B64E213087AC003BFE1A /* Debug */,
-				8D52B64F213087AC003BFE1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
