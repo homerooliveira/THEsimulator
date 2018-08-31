@@ -9,17 +9,29 @@
 import UIKit
 import Charts
 
-public class ChartViewController: UIViewController {
+public final class ChartViewController: UIViewController {
     
     let cellIdentifier = "dataCell"
     var infos: [String] = []
     
-    override public func viewDidLoad() {
-        super.viewDidLoad()
+    fileprivate func createTableView(_ chartView: ScatterChartView) {
+        let tableView = UITableView()
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        view.backgroundColor = .white
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: chartView.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
         
-        let chartView = ScatterChartView.makeDefault(frame: .zero)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+    }
+    
+    fileprivate func createChartView(_ chartView: ScatterChartView) {
         let random = LinearCongruentialGenerator()
         chartView.setRandomStrategy(random, iterations: 1_000)
         
@@ -40,21 +52,16 @@ public class ChartViewController: UIViewController {
             chartView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             chartView.heightAnchor.constraint(equalToConstant: 300)
             ])
+    }
+    
+    override public func viewDidLoad() {
+        super.viewDidLoad()
         
-        let tableView = UITableView()
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
         
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: chartView.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ])
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        tableView.dataSource = self
-        tableView.tableFooterView = UIView()
+        let chartView = ScatterChartView.makeDefault(frame: .zero)
+        createChartView(chartView)
+        createTableView(chartView)
     }
 }
 

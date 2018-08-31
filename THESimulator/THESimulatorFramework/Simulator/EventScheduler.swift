@@ -9,12 +9,12 @@
 import Foundation
 
 public final class EventScheduler {
-    public var agenda: [Event] = []
-    public var history: [Event] = []
-    public var executeEvents: ContiguousArray<Event> = []
-    public var lostEvents: Int = 0
-    public var time: Double = 0
-    public var queue: Queue
+    var agenda: [Event] = []
+    var history: ContiguousArray<Event> = []
+    var executeEvents: ContiguousArray<Event> = []
+    var lostEvents: Int = 0
+    var time: Double = 0
+    var queue: Queue
     public let randomStartegy: RandomStrategy
     
     public init(queue: Queue, initialArrivalTime: Double, randomStartegy: RandomStrategy = LinearCongruentialGenerator()) {
@@ -57,8 +57,7 @@ public final class EventScheduler {
         }
     }
     
-    @discardableResult
-    public func execute(iterations: Int) -> [[String]] {
+    public func execute(iterations: Int) -> ExecutionInfo {
         for _ in 0..<iterations {
             let event = agenda.remove(at: 0)
             executeEvents.append(event)
@@ -70,16 +69,12 @@ public final class EventScheduler {
             }
         }
         
-        var statesAsString = queue.states.enumerated().map { (index, state) in
-            "state \(index)| \(state) | \((state / time) * 100 )%"
-        }
-        statesAsString.append("total: \(time) | 100%")
-        
-        let agendaAsString = agenda.enumerated().map { (index, event) in
-            "\(index) - \(event.type) \(event.time)"
-        }
-        
-        let lostEventsString = "lostEvents - \(lostEvents)"
-        return [statesAsString, agendaAsString, [lostEventsString]]
+        return ExecutionInfo(agenda: agenda,
+                             executeEvents: executeEvents,
+                             history: history,
+                             lostEvents: lostEvents,
+                             time: time,
+                             states: queue.states
+        )
     }
 }

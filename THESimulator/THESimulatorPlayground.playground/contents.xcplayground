@@ -3,5 +3,6 @@
     <pages>
         <page name='Random Chart'/>
         <page name='Executions'/>
+        <page name='Execution View'/>
     </pages>
 </playground>

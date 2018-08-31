@@ -26,4 +26,8 @@ public struct Queue {
         self.exitRange = exitRange
         self.states = Array(repeating: 0, count: numberOfStates + 1)
     }
+    
+    public mutating func updateState(with time: Double) {
+        
+    }
 }

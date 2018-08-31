@@ -8,6 +8,11 @@
 
 import Foundation
 
-struct ExecutionInfo {
-    
+public struct ExecutionInfo {
+    public let agenda: [Event]
+    public let executeEvents: ContiguousArray<Event>
+    public let history: ContiguousArray<Event>
+    public let lostEvents: Int
+    public let time: Double
+    public let states: [Double]
 }
