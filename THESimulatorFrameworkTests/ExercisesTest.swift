@@ -13,7 +13,6 @@ class ExercisesTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
     }
     
     func testExercise1() {

@@ -41,12 +41,33 @@ public final class EventScheduler {
         if queue.size < queue.numberOfStates {
             queue.size += 1
             if queue.size <= queue.numberOfServer {
-                schedule(for: .exit(to: queue), time: time + randomStartegy.conversion(queue.exitRange))
+                if queue.outputs.isEmpty {
+                    schedule(for: .exit(to: queue), time: time + randomStartegy.conversion(queue.exitRange))
+                } else {
+                    shedulePercentageOutpus(queue)
+                }
             }
         } else {
             lostEvents += 1
         }
         schedule(for: .arrival(to: queue), time: time + randomStartegy.conversion(queue.arrivalRange))
+    }
+    
+    fileprivate func shedulePercentageOutpus(_ queue: Queue) {
+        let randomNumber = randomStartegy.random()
+        var previousNumber: Double = 0
+        queue
+            .outputs
+            .forEach { (output) in
+                if previousNumber..<output.percentage ~= randomNumber {
+                    if output.to == nil {
+                        schedule(for: .exit(to: queue), time: time + randomStartegy.conversion(queue.exitRange))
+                    } else {
+                        // TODO: faz schedule para outra fila
+                    }
+                }
+                previousNumber = output.percentage
+        }
     }
     
     func executeExit(event: Event, queue: Queue) {
