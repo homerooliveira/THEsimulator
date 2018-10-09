@@ -21,7 +21,10 @@ class ExercisesTest: XCTestCase {
         let random = CustomRandom(randomNumbers)
         
         let queue = Queue(numberOfServer: 1, numberOfStates: 4, arrivalRange: 2...3, exitRange: 3...5)
-        let scheduler = EventScheduler(queue: queue, initialArrivalTime: 2.5, randomStartegy: random)
+        let scheduler = EventScheduler(queues: [queue],
+                                       initialEvents: [Event(type: .arrival(to: queue),
+                                                             time: 2.5)],
+                                       randomStartegy: random)
         
         let executeInfo = scheduler.execute(iterations: 7)
         
@@ -41,7 +44,10 @@ class ExercisesTest: XCTestCase {
         let random = CustomRandom(randomNumbers)
         
         let queue = Queue(numberOfServer: 2, numberOfStates: 3, arrivalRange: 1...2, exitRange: 3...6)
-        let scheduler = EventScheduler(queue: queue, initialArrivalTime: 2, randomStartegy: random)
+        let scheduler = EventScheduler(queues: [queue],
+                                       initialEvents: [Event(type: .arrival(to: queue),
+                                                             time: 2)],
+                                       randomStartegy: random)
         
         let executeInfo = scheduler.execute(iterations: 5)
         

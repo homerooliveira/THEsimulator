@@ -8,7 +8,8 @@
 
 import Foundation
 
-public struct Queue {
+public final class Queue: Equatable {
+    
     public let numberOfServer: Int
     public let numberOfStates: Int
     public let arrivalRange: ClosedRange<Double>
@@ -27,7 +28,24 @@ public struct Queue {
         self.states = Array(repeating: 0, count: numberOfStates + 1)
     }
     
-    public mutating func updateState(with time: Double) {
+    public func accountForProbabilities(event: Event, time: TimeInterval) {
+        states[size] = event.time - time + states[size]
+    }
+    
+    public static func == (lhs: Queue, rhs: Queue) -> Bool {
+        return lhs.numberOfServer == rhs.numberOfServer
+                && lhs.numberOfStates == rhs.numberOfStates
+                && lhs.arrivalRange == rhs.arrivalRange
+                && lhs.exitRange == rhs.exitRange
+                && lhs.states == rhs.states
         
+    }
+}
+
+extension Array where Element == Queue {
+    public func accountForProbabilities(event: Event, time: TimeInterval) {
+        forEach { (queue) in
+            queue.accountForProbabilities(event: event, time: time)
+        }
     }
 }

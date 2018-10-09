@@ -16,7 +16,7 @@
 		8D52B64A213087AC003BFE1A /* THESimulatorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D52B635213087AB003BFE1A /* THESimulatorFramework.framework */; };
 		8D52B64B213087AC003BFE1A /* THESimulatorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D52B635213087AB003BFE1A /* THESimulatorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D52B65D213087E7003BFE1A /* EventScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52B659213087E6003BFE1A /* EventScheduler.swift */; };
-		8D52B65E213087E7003BFE1A /* Queu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52B65A213087E6003BFE1A /* Queu.swift */; };
+		8D52B65E213087E7003BFE1A /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52B65A213087E6003BFE1A /* Queue.swift */; };
 		8D52B65F213087E7003BFE1A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52B65B213087E6003BFE1A /* Event.swift */; };
 		8D52B660213087E7003BFE1A /* RandomStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52B65C213087E6003BFE1A /* RandomStrategy.swift */; };
 		8D52B665213087ED003BFE1A /* MeasureTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52B661213087EC003BFE1A /* MeasureTime.swift */; };
@@ -76,7 +76,7 @@
 		8D52B637213087AB003BFE1A /* THESimulatorFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THESimulatorFramework.h; sourceTree = "<group>"; };
 		8D52B638213087AB003BFE1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D52B659213087E6003BFE1A /* EventScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduler.swift; sourceTree = "<group>"; };
-		8D52B65A213087E6003BFE1A /* Queu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queu.swift; sourceTree = "<group>"; };
+		8D52B65A213087E6003BFE1A /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		8D52B65B213087E6003BFE1A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8D52B65C213087E6003BFE1A /* RandomStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomStrategy.swift; sourceTree = "<group>"; };
 		8D52B661213087EC003BFE1A /* MeasureTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureTime.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 			children = (
 				8D52B65B213087E6003BFE1A /* Event.swift */,
 				8D52B659213087E6003BFE1A /* EventScheduler.swift */,
-				8D52B65A213087E6003BFE1A /* Queu.swift */,
+				8D52B65A213087E6003BFE1A /* Queue.swift */,
 				8D83B1EF2130CF5F00CA98AA /* ExecutionInfo.swift */,
 			);
 			path = Simulator;
@@ -407,7 +407,7 @@
 				8D52B65F213087E7003BFE1A /* Event.swift in Sources */,
 				8D83B1F02130CF5F00CA98AA /* ExecutionInfo.swift in Sources */,
 				8D52B667213087ED003BFE1A /* Array+insertOrdered.swift in Sources */,
-				8D52B65E213087E7003BFE1A /* Queu.swift in Sources */,
+				8D52B65E213087E7003BFE1A /* Queue.swift in Sources */,
 				8D83B1FB213265D900CA98AA /* LinearCongruentialGenerator.swift in Sources */,
 				8D52B668213087ED003BFE1A /* ScatterView.swift in Sources */,
 				8D52B660213087E7003BFE1A /* RandomStrategy.swift in Sources */,

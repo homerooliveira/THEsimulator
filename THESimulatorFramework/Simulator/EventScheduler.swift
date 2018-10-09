@@ -13,19 +13,19 @@ public final class EventScheduler {
     var history: ContiguousArray<Event> = []
     var executeEvents: ContiguousArray<Event> = []
     var lostEvents: Int = 0
-    var time: Double = 0
-    var queue: Queue
+    var time: TimeInterval = 0
+    var queues: [Queue] = []
     public let randomStartegy: RandomStrategy
     
-    public init(queue: Queue, initialArrivalTime: Double, randomStartegy: RandomStrategy = LinearCongruentialGenerator()) {
-        self.queue = queue
-        self.agenda = [Event(type: .arrival, time: initialArrivalTime)]
-        self.history = [Event(type: .arrival, time: initialArrivalTime)]
+    public init(queues: [Queue], initialEvents: [Event], randomStartegy: RandomStrategy = LinearCongruentialGenerator()) {
+        self.queues = queues
+        self.agenda = initialEvents
+        self.history = ContiguousArray(initialEvents)
         self.randomStartegy = randomStartegy
     }
     
     func accountForProbabilities(event: Event) {
-        queue.states[queue.size] = event.time - time + queue.states[queue.size]
+        queues.accountForProbabilities(event: event, time: time)
         time = event.time
     }
     
@@ -36,24 +36,24 @@ public final class EventScheduler {
         history.append(event)
     }
     
-    func executeArrival(event: Event) {
+    func executeArrival(event: Event, queue: Queue) {
         accountForProbabilities(event: event)
         if queue.size < queue.numberOfStates {
             queue.size += 1
             if queue.size <= queue.numberOfServer {
-                schedule(for: .exit, time: time + randomStartegy.conversion(queue.exitRange))
+                schedule(for: .exit(to: queue), time: time + randomStartegy.conversion(queue.exitRange))
             }
         } else {
             lostEvents += 1
         }
-        schedule(for: .arrival, time: time + randomStartegy.conversion(queue.arrivalRange))
+        schedule(for: .arrival(to: queue), time: time + randomStartegy.conversion(queue.arrivalRange))
     }
     
-    func executeExit(event: Event) {
+    func executeExit(event: Event, queue: Queue) {
         accountForProbabilities(event: event)
         queue.size -= 1
         if queue.size >= queue.numberOfServer {
-            schedule(for: .exit, time: time + randomStartegy.conversion(queue.exitRange))
+            schedule(for: .exit(to: queue), time: time + randomStartegy.conversion(queue.exitRange))
         }
     }
     
@@ -62,10 +62,10 @@ public final class EventScheduler {
             let event = agenda.remove(at: 0)
             executeEvents.append(event)
             switch event.type {
-            case .arrival:
-                executeArrival(event: event)
-            case .exit:
-                executeExit(event: event)
+            case .arrival(let to):
+                executeArrival(event: event, queue: to)
+            case .exit(let to):
+                executeExit(event: event, queue: to)
             }
         }
         
@@ -74,7 +74,7 @@ public final class EventScheduler {
                              history: history,
                              lostEvents: lostEvents,
                              time: time,
-                             states: queue.states
+                             states: queues.first!.states
         )
     }
 }

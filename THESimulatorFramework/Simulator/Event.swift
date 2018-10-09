@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum EventType {
-    case arrival
-    case exit
+public enum EventType: Equatable {
+    case arrival(to: Queue)
+    case exit(to: Queue)
 }
 
 public struct Event: Comparable {
