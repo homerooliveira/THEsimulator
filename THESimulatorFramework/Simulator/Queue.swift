@@ -9,7 +9,10 @@
 import Foundation
 
 public final class Queue: Equatable {
-    public typealias Output = (to: Queue?, percentage: Double)
+    public enum Output {
+        case exit(percentage: Double)
+        case transition(to: Queue, percentage: Double)
+    }
     
     public let numberOfServer: Int
     public let numberOfStates: Int
@@ -50,6 +53,17 @@ extension Array where Element == Queue {
     public func accountForProbabilities(event: Event, time: TimeInterval) {
         forEach { (queue) in
             queue.accountForProbabilities(event: event, time: time)
+        }
+    }
+}
+
+extension Queue.Output {
+    var percentage: Double {
+        switch self {
+        case .exit(let percentage):
+            return percentage
+        case .transition(_, let percentage):
+            return percentage
         }
     }
 }

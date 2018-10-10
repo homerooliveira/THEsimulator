@@ -11,11 +11,17 @@ import Foundation
 public enum EventType: Equatable {
     case arrival(to: Queue)
     case exit(to: Queue)
+    case transition(from: Queue, to: Queue)
 }
 
 public struct Event: Comparable {
     let type: EventType
-    let time: Double
+    let time: TimeInterval
+    
+    public init(type: EventType, time: TimeInterval) {
+        self.type = type
+        self.time = time
+    }
 }
 
 public func < (lhs: Event, rhs: Event) -> Bool {

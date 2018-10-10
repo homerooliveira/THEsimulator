@@ -59,11 +59,11 @@ public final class EventScheduler {
         queue
             .outputs
             .forEach { (output) in
-                if previousNumber..<output.percentage ~= randomNumber {
-                    if output.to == nil {
-                        schedule(for: .exit(to: queue), time: time + randomStartegy.conversion(queue.exitRange))
+                if previousNumber..<output.percentage + previousNumber ~= randomNumber {
+                    if case Queue.Output.transition(let to, _) = output {
+                        schedule(for: .transition(from: queue, to: to), time: time + randomStartegy.conversion(queue.exitRange))
                     } else {
-                        // TODO: faz schedule para outra fila
+                        schedule(for: .exit(to: queue), time: time + randomStartegy.conversion(queue.exitRange))
                     }
                 }
                 previousNumber = output.percentage
@@ -78,6 +78,11 @@ public final class EventScheduler {
         }
     }
     
+    func executeTransition(from: Queue, to: Queue, event: Event) {
+        executeExit(event: event, queue: from)
+        executeArrival(event: event, queue: to)
+    }
+    
     public func execute(iterations: Int) -> ExecutionInfo {
         for _ in 0..<iterations {
             let event = agenda.remove(at: 0)
@@ -85,6 +90,8 @@ public final class EventScheduler {
             switch event.type {
             case .arrival(let to):
                 executeArrival(event: event, queue: to)
+            case .transition(let from, let to):
+                executeTransition(from: from, to: to, event: event)
             case .exit(let to):
                 executeExit(event: event, queue: to)
             }
