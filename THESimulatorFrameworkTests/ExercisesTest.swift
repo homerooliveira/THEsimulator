@@ -29,9 +29,9 @@ class ExercisesTest: XCTestCase {
         
         let expectedStates = [2.5, 4.8830, 5.3820, 0.0, 0.0]
         
-        XCTAssertEqual(expectedStates.count, executeInfo.states.count)
+        XCTAssertEqual(expectedStates.count, executeInfo.queues.first?.states.count)
         
-        zip(expectedStates, executeInfo.states).forEach { (expected, state) in
+        zip(expectedStates, executeInfo.queues.first?.states ?? []).forEach { (expected, state) in
             XCTAssertEqual(expected, state, accuracy: 0.0000000001)
         }
         
@@ -52,9 +52,9 @@ class ExercisesTest: XCTestCase {
         
         let expectedStates = [2.0, 1.1421, 1.2003, 2.4204]
         
-        XCTAssertEqual(expectedStates.count, executeInfo.states.count)
+        XCTAssertEqual(expectedStates.count, executeInfo.queues.first?.states.count)
         
-        zip(expectedStates, executeInfo.states).forEach { (expected, state) in
+        zip(expectedStates, executeInfo.queues.first?.states ?? []).forEach { (expected, state) in
             XCTAssertEqual(expected, state, accuracy: 0.0000000001)
         }
         

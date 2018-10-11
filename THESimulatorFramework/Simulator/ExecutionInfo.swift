@@ -14,5 +14,5 @@ public struct ExecutionInfo {
     public let history: ContiguousArray<Event>
     public let lostEvents: Int
     public let time: Double
-    public let states: [Double]
+    public let queues: [Queue]
 }

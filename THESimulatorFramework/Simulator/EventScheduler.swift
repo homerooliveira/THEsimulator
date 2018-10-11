@@ -91,13 +91,13 @@ public final class EventScheduler {
             executeEvents.append(event)
             switch event.type {
             case .arrival(let to):
-                print("executeArrival \(to.id)")
+//                print("executeArrival \(to.id)")
                 executeArrival(event: event, queue: to)
             case .transition(let from, let to):
-                print("executeTransition from:\(from.id) to:\(to.id)")
+//                print("executeTransition from:\(from.id) to:\(to.id)")
                 executeTransition(from: from, to: to, event: event)
             case .exit(let to):
-                print("executeExit \(to.id)")
+//                print("executeExit \(to.id)")
                 executeExit(event: event, queue: to)
             }
         }
@@ -107,7 +107,7 @@ public final class EventScheduler {
                              history: history,
                              lostEvents: lostEvents,
                              time: time,
-                             states: queues.first!.states
+                             queues: queues
         )
     }
 }

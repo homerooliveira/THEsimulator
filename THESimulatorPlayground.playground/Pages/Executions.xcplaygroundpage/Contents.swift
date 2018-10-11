@@ -6,15 +6,19 @@ import THESimulatorFramework
 //let random = CustomRandom(randomNumbers)
 
 let queue2 = Queue(id: 2, numberOfServer: 1, numberOfStates: 4, arrivalRange: 4...7, exitRange: 4...8)
-let queue = Queue(id: 1, numberOfServer: 2, numberOfStates: 1000, arrivalRange: 2...3, exitRange: 4...7, outputs: [  .exit(percentage: 0.3), .transition(to: queue2, percentage: 0.7)])
-let scheduler = EventScheduler(queues: [queue],
+let queue = Queue(id: 1, numberOfServer: 2, numberOfStates: 4, arrivalRange: 2...3, exitRange: 4...7, outputs: [  .exit(percentage: 0.3), .transition(to: queue2, percentage: 0.7)])
+let scheduler = EventScheduler(queues: [queue, queue2],
                                initialEvents: [Event(type: .arrival(to: queue),
                                                      time: 3)])
 
-let executeInfo = scheduler.execute(iterations: 9)
+let executeInfo = scheduler.execute(iterations: 100)
 
 executeInfo.executeEvents
     .forEach { (event) in
         print(event)
 }
- 
+
+executeInfo.queues
+    .forEach { (queue) in
+        print(queue.states)
+}
