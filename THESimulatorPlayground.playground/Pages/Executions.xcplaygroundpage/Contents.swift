@@ -8,7 +8,10 @@ let (initialEvents, queues) = parser.parse(fileName: "example")
 let scheduler = EventScheduler(queues: queues, initialEvents: initialEvents)
 let executeInfo = scheduler.execute(iterations: 10)
 
+
 executeInfo.queues
     .forEach { (queue) in
-        print("id: \(queue.id) states: \(queue.states)")
+        print("id: \(queue.id) states: \(queue.states.map({ ($0 / executeInfo.time) * 100 }))")
 }
+print("Global Time: \(executeInfo.time)")
+print("Lost Events: \(executeInfo.lostEvents)")
