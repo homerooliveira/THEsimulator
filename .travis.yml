@@ -1,5 +1,6 @@
 
 language: objective-c
+osx_image: xcode10
 xcode_project: THESimulator.xcodeproj
 xcode_scheme: THESimulatorFramework
 xcode_destination: platform=iOS Simulator,OS=11.4,name=iPhone 6s
