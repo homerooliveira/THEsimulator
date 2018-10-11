@@ -6,7 +6,7 @@ let parser = FileParser()
 let (initialEvents, queues) = parser.parse(fileName: "example")
 
 let scheduler = EventScheduler(queues: queues, initialEvents: initialEvents)
-let executeInfo = scheduler.execute(iterations: 10)
+let executeInfo = scheduler.execute(iterations: 1_000_000)
 
 
 executeInfo.queues

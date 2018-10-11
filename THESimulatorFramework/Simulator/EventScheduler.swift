@@ -39,7 +39,6 @@ public final class EventScheduler {
     }
     
     func executeArrival(event: Event, queue: Queue) {
-        accountForProbabilities(event: event)
         if queue.size < queue.numberOfStates {
             queue.size += 1
             if queue.size <= queue.numberOfServer {
@@ -73,10 +72,15 @@ public final class EventScheduler {
     }
     
     func executeExit(event: Event, queue: Queue) {
-        accountForProbabilities(event: event)
         queue.size -= 1
         if queue.size >= queue.numberOfServer {
-            schedule(for: .exit(to: queue), time: time + randomStartegy.conversion(queue.exitRange))
+            if queue.outputs.isEmpty {
+                schedule(for: .exit(to: queue), time: time + randomStartegy.conversion(queue.exitRange))
+            } else {
+                shedulePercentageOutpus(queue)
+            }
+        } else {
+            lostEvents += 1
         }
     }
     
@@ -89,15 +93,13 @@ public final class EventScheduler {
         for _ in 0..<iterations {
             let event = agenda.remove(at: 0)
             executeEvents.append(event)
+            accountForProbabilities(event: event)
             switch event.type {
             case .arrival(let to):
-//                print("executeArrival \(to.id)")
                 executeArrival(event: event, queue: to)
             case .transition(let from, let to):
-//                print("executeTransition from:\(from.id) to:\(to.id)")
                 executeTransition(from: from, to: to, event: event)
             case .exit(let to):
-//                print("executeExit \(to.id)")
                 executeExit(event: event, queue: to)
             }
         }
