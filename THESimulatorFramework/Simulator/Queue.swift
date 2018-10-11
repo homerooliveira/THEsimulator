@@ -14,7 +14,7 @@ public final class Queue: Equatable {
         case transition(to: Queue, percentage: Double)
     }
     
-    public let id: Int
+    public let id: String
     public let numberOfServer: Int
     public let numberOfStates: Int
     public let arrivalRange: ClosedRange<Double>
@@ -23,7 +23,7 @@ public final class Queue: Equatable {
     public var size: Int = 0
     public var outputs: [Output]
     
-    public init(id: Int,
+    public init(id: String,
                 numberOfServer: Int,
                 numberOfStates: Int,
                 arrivalRange: ClosedRange<Double>,

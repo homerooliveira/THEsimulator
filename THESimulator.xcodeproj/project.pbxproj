@@ -29,6 +29,7 @@
 		8D83B1F7213265AD00CA98AA /* CustomRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83B1F6213265AD00CA98AA /* CustomRandom.swift */; };
 		8D83B1F9213265C100CA98AA /* CocoaRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83B1F8213265C100CA98AA /* CocoaRandom.swift */; };
 		8D83B1FB213265D900CA98AA /* LinearCongruentialGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83B1FA213265D900CA98AA /* LinearCongruentialGenerator.swift */; };
+		8DB2EBA4216FAF0000CC9FC3 /* FileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2EBA3216FAF0000CC9FC3 /* FileParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		8D83B1F6213265AD00CA98AA /* CustomRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRandom.swift; sourceTree = "<group>"; };
 		8D83B1F8213265C100CA98AA /* CocoaRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaRandom.swift; sourceTree = "<group>"; };
 		8D83B1FA213265D900CA98AA /* LinearCongruentialGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearCongruentialGenerator.swift; sourceTree = "<group>"; };
+		8DB2EBA3216FAF0000CC9FC3 /* FileParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileParser.swift; sourceTree = "<group>"; };
 		8DC1A304213093D000C9F797 /* ExercisesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +175,7 @@
 		8D52B636213087AB003BFE1A /* THESimulatorFramework */ = {
 			isa = PBXGroup;
 			children = (
+				8DB2EBA2216FAEEA00CC9FC3 /* Parser */,
 				8D83B1F52132656F00CA98AA /* Random Strategy */,
 				8D52B66A21308824003BFE1A /* Simulator */,
 				8D52B66B21308836003BFE1A /* RandomNumbersChart */,
@@ -221,6 +224,14 @@
 				8D83B1FA213265D900CA98AA /* LinearCongruentialGenerator.swift */,
 			);
 			path = "Random Strategy";
+			sourceTree = "<group>";
+		};
+		8DB2EBA2216FAEEA00CC9FC3 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				8DB2EBA3216FAF0000CC9FC3 /* FileParser.swift */,
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +419,7 @@
 				8D83B1F7213265AD00CA98AA /* CustomRandom.swift in Sources */,
 				8D52B665213087ED003BFE1A /* MeasureTime.swift in Sources */,
 				8D52B65F213087E7003BFE1A /* Event.swift in Sources */,
+				8DB2EBA4216FAF0000CC9FC3 /* FileParser.swift in Sources */,
 				8D83B1F02130CF5F00CA98AA /* ExecutionInfo.swift in Sources */,
 				8D52B667213087ED003BFE1A /* Array+insertOrdered.swift in Sources */,
 				8D52B65E213087E7003BFE1A /* Queue.swift in Sources */,
