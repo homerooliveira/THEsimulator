@@ -17,7 +17,9 @@ public final class EventScheduler {
     var queues: [Queue] = []
     public let randomStartegy: RandomStrategy
     
-    public init(queues: [Queue], initialEvents: [Event], randomStartegy: RandomStrategy = LinearCongruentialGenerator()) {
+    public init(queues: [Queue],
+                initialEvents: [Event],
+                randomStartegy: RandomStrategy = LinearCongruentialGenerator()) {
         self.queues = queues
         self.agenda = initialEvents
         self.history = ContiguousArray(initialEvents)
@@ -89,10 +91,13 @@ public final class EventScheduler {
             executeEvents.append(event)
             switch event.type {
             case .arrival(let to):
+                print("executeArrival \(to.id)")
                 executeArrival(event: event, queue: to)
             case .transition(let from, let to):
+                print("executeTransition from:\(from.id) to:\(to.id)")
                 executeTransition(from: from, to: to, event: event)
             case .exit(let to):
+                print("executeExit \(to.id)")
                 executeExit(event: event, queue: to)
             }
         }

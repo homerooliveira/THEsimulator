@@ -14,19 +14,22 @@ public final class Queue: Equatable {
         case transition(to: Queue, percentage: Double)
     }
     
+    public let id: Int
     public let numberOfServer: Int
     public let numberOfStates: Int
     public let arrivalRange: ClosedRange<Double>
     public let exitRange: ClosedRange<Double>
     public var states: [Double]
     public var size: Int = 0
-    public let outputs: [Output]
+    public var outputs: [Output]
     
-    public init(numberOfServer: Int,
-         numberOfStates: Int,
-         arrivalRange: ClosedRange<Double>,
-         exitRange: ClosedRange<Double>,
-         outputs: [Output] = []) {
+    public init(id: Int,
+                numberOfServer: Int,
+                numberOfStates: Int,
+                arrivalRange: ClosedRange<Double>,
+                exitRange: ClosedRange<Double>,
+                outputs: [Output] = []) {
+        self.id = id
         self.numberOfServer = numberOfServer
         self.numberOfStates = numberOfStates
         self.arrivalRange = arrivalRange
